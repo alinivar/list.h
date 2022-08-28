@@ -23,8 +23,6 @@ extern void free(void*);
 #define LIST_FREE free
 #endif
 
-#define __L_ALIGN_TO(c, s) ((c+(s-1))&~(s-1))
-
 #define list(t) struct { size_t __itemsize, len, cap; t* data; }
 
 #define lnew(t)     { sizeof(t), 0, 1, LIST_MALLOC(sizeof(t)*1), }
